@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %} | Blood Donation</title>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <nav class="py-6 px-6 flex justify-between items-center bg-white shadow-md">
+        <a href="/" class="text-2xl font-bold text-teal-600">Blood Donation</a>
+        <div class="space-x-6">
+            <a href="{% url 'core:signup' %}" class="px-4 py-2 text-lg font-semibold bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-300">Sign up</a>
+            <a href="{% url 'core:login' %}" class="px-4 py-2 text-lg font-semibold bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition duration-300">Log in</a>
+        </div>
+    </nav>
+
+    <header class="bg-teal-600 text-white py-20 text-center">
+        <h1 class="text-4xl font-extrabold">Join the Fight Against Blood Shortages</h1>
+        <p class="mt-4 text-lg">Your contribution can save lives. Sign up today!</p>
+    </header>
+
+    <main class="px-6 py-8">
+        {% block content %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">Why Donate Blood?</h2>
+                <p>Your blood donation can help patients in need. Every drop counts!</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">How It Works</h2>
+                <p>Donating blood is a simple process. We guide you through each step.</p>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer class="bg-white py-4 text-center">
+        <p class="text-gray-600">© 2024 Blood Donation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
